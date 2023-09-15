@@ -1,0 +1,17 @@
+public class BugExample {
+
+    public static void main(String[] args) {
+        int result = divide(10, 0);
+        System.out.println("Result: " + result);
+    }
+
+    public static int divide(int a, int b) {
+        int result = 0;
+        try {
+            result = a / b; // Bug: Division by zero
+        } catch (ArithmeticException e) {
+            System.err.println("Error: Division by zero.");
+        }
+        return result;
+    }
+}
